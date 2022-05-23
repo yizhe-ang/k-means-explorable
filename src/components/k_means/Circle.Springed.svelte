@@ -1,11 +1,10 @@
 <script>
   import { drag, select } from "d3";
-  import { stepView } from "$stores/misc";
   import { clamp } from "$utils/helpers.js";
   import { spring } from "svelte/motion";
   import { getContext } from "svelte";
-  import { slide, scale, fade } from "svelte/transition";
-  import { backOut, backIn, cubicIn } from "svelte/easing";
+  import { fade } from "svelte/transition";
+  import { cubicIn } from "svelte/easing";
 
   const { width, height, xGet, yGet, xScale, yScale } = getContext("LayerCake");
   const { data } = getContext("KMeans");
@@ -42,7 +41,7 @@
   }
 </script>
 
-<!-- FIXME: Animations make it laggy -->
+<!-- FIXME: Scale animations make it laggy -->
 <circle
   transition:fade={{ duration: 200, easing: cubicIn }}
   on:click={() => {
@@ -82,15 +81,7 @@
     transform-box: fill-box;
     transform-origin: center;
     pointer-events: auto;
-    /* cursor: pointer; */
 
     transition: fill 250ms;
-
-    /* r: 5;
-    fill: #ccc;
-    fill-opacity: 0.5;
-    stroke: #000;
-    stroke-width: 1;
-    stroke-opacity: 0.3; */
   }
 </style>

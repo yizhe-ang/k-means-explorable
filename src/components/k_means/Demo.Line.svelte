@@ -2,9 +2,7 @@
   import { getContext } from "svelte";
   import { line, curveLinear } from "d3";
   import { draw, fade } from "svelte/transition";
-  import { cubicOut, cubicIn } from "svelte/easing";
 
-  const { scrollyIndex } = getContext("Scrolly");
   const { xGet, yGet } = getContext("LayerCake");
 
   export let data;
@@ -20,7 +18,7 @@
 
 <path
   in:draw={{ duration: 700 }}
-  out:fade={{ duration: 200  }}
+  out:fade={{ duration: 200 }}
   d={pathD}
   {stroke}
   stroke-width={strokeWidth}

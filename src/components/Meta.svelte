@@ -1,5 +1,6 @@
 <script>
-  export let title = "Title TK";
+  // TODO:
+  export let title = "K-Means Explorable";
   export let description = "Description TK";
   export let url = "https://pudding.cool";
   export let keywords = "";

@@ -5,7 +5,7 @@
   import Meta from "$components/Meta.svelte";
   import App from "$components/App.svelte";
   import copy from "$data/doc.json";
-  if (browser) console.log("svelte-starter version", __VERSION__);
+  // if (browser) console.log("svelte-starter version", __VERSION__);
   // FIXME: What is the best practice for loading datasets?
   import blobs from "$lib/data/datasets/blobs_alt.json";
   import anisoBlobs from "$data/datasets/aniso_blobs.json";

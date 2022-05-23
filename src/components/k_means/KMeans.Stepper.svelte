@@ -1,28 +1,13 @@
 <script>
-  import { totalIterations, algoStep, toggleKMeans } from "$stores/misc";
-  import Icon from "$components/helpers/Icon.svelte";
+  import { totalIterations, algoStep } from "$stores/misc";
   import IconButton from "$components/k_means/IconButton.svelte";
 
   const firstStep = -1;
   $: lastStep = $totalIterations * 2 - 2;
-
-  $: console.log("algoStep", $algoStep);
 </script>
 
 <div class="wrapper">
   <div class="ui-wrapper">
-    <!-- Rerun clustering -->
-    <!-- <button
-      on:click={() => {
-        $toggleKMeans = !$toggleKMeans;
-        // HACK: To trigger reactivity
-        $algoStep = -2;
-        $algoStep = firstStep;
-      }}
-    >
-      Rerun
-    </button> -->
-
     <!-- Step buttons -->
     <IconButton
       name={"skip-back"}
@@ -56,17 +41,21 @@
     <div class="repeat-label">Repeat until convergence:</div>
     <div
       class="repeat-step"
-      class:active={$algoStep % 2 === 0 && ![firstStep, lastStep].includes($algoStep)}
+      class:active={$algoStep % 2 === 0 &&
+        ![firstStep, lastStep].includes($algoStep)}
     >
       Assign each data point to its closest prototype
     </div>
     <div
       class="repeat-step"
-      class:active={$algoStep % 2 === 1 && ![firstStep, lastStep].includes($algoStep)}
+      class:active={$algoStep % 2 === 1 &&
+        ![firstStep, lastStep].includes($algoStep)}
     >
       Update prototypes to be the mean of its assigned data points
     </div>
-    <div class:active={$algoStep === lastStep}>Obtain final cluster assignments</div>
+    <div class:active={$algoStep === lastStep}>
+      Obtain final cluster assignments
+    </div>
   </div>
 </div>
 

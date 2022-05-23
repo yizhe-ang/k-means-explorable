@@ -1,8 +1,6 @@
 <script>
   import copy from "$data/copy.json";
   import Scrolly from "$components/helpers/Scrolly.svelte";
-  import Header from "$components/k_means/Header.svelte";
-  import Hero from "$components/k_means/Hero.svelte";
   import ScrollyStepWrapper from "$lib/components/layouts/Scrolly.StepWrapper.svelte";
   import ScrollyStep from "$lib/components/layouts/Scrolly.Step.svelte";
   import ScrollyStepContent from "$lib/components/layouts/Scrolly.StepContent.svelte";
@@ -28,7 +26,7 @@
   <div class="foreground-wrapper">
     <Scrolly bind:value>
       <ScrollyStepWrapper height={"100vh"}>
-        <Header />
+        <!-- <Header /> -->
       </ScrollyStepWrapper>
 
       {#each copy.steps as step, i}

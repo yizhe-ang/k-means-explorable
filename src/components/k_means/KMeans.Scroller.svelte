@@ -21,19 +21,11 @@
 >
   <div slot="background">
     <KMeans />
-    <!-- <p>
-      This is the background content. It will stay fixed in place while the foreground scrolls over
-      the top.
-    </p>
-
-    <p>Section {index + 1} is currently active.</p> -->
   </div>
 
   <div slot="foreground">
     <div class="spacer" />
 
-    <!-- TODO: This can be a dynamic element / component-->
-    <!-- generated from data -->
     {#each [...Array(10).keys()] as text, i}
       <!-- TODO: Can modularize this -->
       <div class="step" class:active={index === i}>
@@ -71,6 +63,5 @@
   }
 
   .step-content {
-
   }
 </style>

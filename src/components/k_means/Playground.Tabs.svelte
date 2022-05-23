@@ -1,7 +1,13 @@
 <script>
   import DatasetRadioGroup from "$components/k_means/DatasetRadioGroup.svelte";
   import KMeansStepper from "$components/k_means/KMeans.Stepper.svelte";
-  import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@rgossiaux/svelte-headlessui";
+  import {
+    Tab,
+    TabGroup,
+    TabList,
+    TabPanel,
+    TabPanels
+  } from "@rgossiaux/svelte-headlessui";
   import { stepView, algoStep } from "$stores/misc";
 
   $: selectedTabIndex = $stepView ? 1 : 0;
@@ -15,9 +21,7 @@
     key={selectedTabIndex}
     defaultIndex={selectedTabIndex}
     on:change={(e) => {
-      console.log(e.detail);
-
-      selectedTabIndex = e.detail
+      selectedTabIndex = e.detail;
 
       if (e.detail === 0) {
         $stepView = false;
@@ -29,7 +33,11 @@
   >
     <TabList class={"tab-list"}>
       {#each tabs as t}
-        <Tab class={({ selected }) => (selected ? "tab-selected" : "tab-unselected")} let:selected>
+        <Tab
+          class={({ selected }) =>
+            selected ? "tab-selected" : "tab-unselected"}
+          let:selected
+        >
           {t}
         </Tab>
       {/each}
@@ -48,9 +56,6 @@
     background-color: var(--color-gray-50);
   }
 
-  /* * > :global(.tab-unselected) {
-    background: hot-pink;
-  } */
   :global(.tab-list) {
     --tab-background-color: var(--bg-color);
     --tab-padding: 12px 32px;
@@ -137,10 +142,8 @@
     border-right: 1px solid var(--color-gray-200);
     border-bottom: 1px solid var(--color-gray-200);
     /* border-bottom: 1px solid var(--color-gray-300); */
-    /* TODO: Only at certain corners */
     border-radius: 5px;
 
     /* background-color: lightgrey; */
-
   }
 </style>

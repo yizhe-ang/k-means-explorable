@@ -27,12 +27,6 @@
   $: clusterAssignments = $assignmentsHistory[$assignmentsHistory.length - 1];
 
   // Hardcode sample data to explain distance metric
-  // TODO: Update this
-  // const sampleData = [
-  //   { x: 0.9480809100559839, y: 0.7008366197126539, fill: clusterColors[2] },
-  //   { x: 0.8783810712951932, y: 0.8241849997826217, fill: clusterColors[2] },
-  //   { x: 0.5243915975264637, y: 0.610518407008911, fill: clusterColors[1] }
-  // ];
   const sampleData = [
     { x: 0.8724253053023101, y: 0.7271407765508389, fill: clusterColors[2] },
     { x: 0.8959476388441352, y: 0.8760700961343391, fill: clusterColors[2] },
@@ -65,8 +59,6 @@
     </Html>
 
     <Svg>
-      <!-- FIXME: K-means is ran when initialized -->
-      <!-- How to prevent that? -->
       <!-- Marginal distributions -->
       {#if $scrollyIndex >= 22}
         <Histogram
@@ -127,7 +119,6 @@
 
       <!-- Distance metric demo -->
       {#if $scrollyIndex === 7}
-        <!-- TODO: Can componentize this -->
         {#each sampleLines as d}
           <Line data={d} stroke={"hsl(0, 0%, 0%)"} strokeWidth={3} />
         {/each}

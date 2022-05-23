@@ -2,8 +2,7 @@
   import {
     RadioGroup,
     RadioGroupLabel,
-    RadioGroupOption,
-    RadioGroupDescription
+    RadioGroupOption
   } from "@rgossiaux/svelte-headlessui";
   import { selectedDataset, datasets, numSamples } from "$stores/misc";
   import InputNumber from "$components/k_means/InputNumber.svelte";
@@ -15,9 +14,15 @@
   import moons from "$svg/moons.svg";
   import noStructure from "$svg/no_structure.svg";
 
-  const svgs = { blobs, anisoBlobs, unevenBlobs, variedBlobs, circles, moons, noStructure };
-
-  console.log(svgs["noStructure"])
+  const svgs = {
+    blobs,
+    anisoBlobs,
+    unevenBlobs,
+    variedBlobs,
+    circles,
+    moons,
+    noStructure
+  };
 </script>
 
 <div class="wrapper">
@@ -37,7 +42,8 @@
       $selectedDataset = e.detail;
     }}
   >
-    <RadioGroupLabel class={"radio-group-label"}>Choose Dataset</RadioGroupLabel>
+    <RadioGroupLabel class={"radio-group-label"}>Choose Dataset</RadioGroupLabel
+    >
 
     {#each $datasets as d (d.name)}
       <RadioGroupOption value={d} let:checked let:active>
@@ -46,11 +52,6 @@
         </div>
       </RadioGroupOption>
     {/each}
-    <!-- <RadioGroupOption value={"test"} let:checked>
-      <div class="option-wrapper">
-        {@html blobsImg}
-      </div>
-    </RadioGroupOption> -->
   </RadioGroup>
 </div>
 
@@ -61,21 +62,15 @@
     gap: 16px;
   }
 
-  /* TODO: How to put a shadow at the right side? */
+  /* TODO: Put horizontal scroll shadows */
   :global(.radio-group) {
-    /* min-width: 0; */
-    /* min-width: 0; */
-    /* max-width: auto; */
-    /* width: min(100%, auto); */
     display: flex;
     gap: 16px;
     padding-top: 4px;
     padding-bottom: 12px;
 
-    /* overflow-x: scroll; */
     overflow: auto;
 
-    /* border: 1px solid var(--color-gray-300); */
     border-radius: 1%;
   }
 

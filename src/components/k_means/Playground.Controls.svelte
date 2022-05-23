@@ -1,12 +1,11 @@
 <script>
   import PlaygroundTabs from "$components/k_means/Playground.Tabs.svelte";
-  import Icon from "$components/helpers/Icon.svelte";
   import IconButton from "$components/k_means/IconButton.svelte";
   import InputNumber from "$components/k_means/InputNumber.svelte";
   import { algoStep, toggleKMeans, numClusters } from "$stores/misc";
   import { getContext } from "svelte";
   import { fly } from "svelte/transition";
-  import { cubicIn, cubicOut } from "svelte/easing";
+  import { cubicOut } from "svelte/easing";
 
   const { scrollyIndex } = getContext("Scrolly");
 
@@ -53,9 +52,5 @@
     display: flex;
     gap: 24px;
     align-items: center;
-  }
-
-  .rerun-button {
-    align-self: flex-start;
   }
 </style>

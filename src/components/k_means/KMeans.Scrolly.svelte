@@ -1,7 +1,6 @@
 <script>
   import copy from "$data/copy.json";
   import Header from "$components/k_means/Header.svelte";
-  import Hero from "$components/k_means/Hero.svelte";
   import ScrollyStepWrapper from "$components/layouts/Scrolly.StepWrapper.svelte";
   import ScrollyStep from "$components/layouts/Scrolly.Step.svelte";
   import ScrollyStepContent from "$components/layouts/Scrolly.StepContent.svelte";
@@ -9,8 +8,6 @@
   import { onMount, setContext } from "svelte";
   import { writable } from "svelte/store";
   import scrollama from "scrollama";
-
-  // TODO: Set index ranges for different scrolly sections / events here
 
   // Scroller parameters
   const scrollyIndex = writable(undefined);
@@ -33,7 +30,10 @@
 
 <!-- TODO: Clicking each section title shows the ToC -->
 
-<div class="wrapper" style:pointer-events={$scrollyIndex === 0 ? "none" : "auto"}>
+<div
+  class="wrapper"
+  style:pointer-events={$scrollyIndex === 0 ? "none" : "auto"}
+>
   <div class="foreground-wrapper">
     <ScrollyStepWrapper height={"100vh"}>
       <Header />
@@ -84,6 +84,7 @@
     z-index: 10;
   }
 
+  /* TODO: Mobile view */
   @media screen and (max-width: 768px) {
     .wrapper {
       flex-direction: column-reverse;

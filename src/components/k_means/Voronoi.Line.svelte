@@ -2,9 +2,7 @@
   import { getContext } from "svelte";
   import { line, curveLinear } from "d3";
   import { draw } from "svelte/transition";
-  import { cubicOut, cubicIn } from "svelte/easing";
 
-  const { scrollyIndex } = getContext("Scrolly");
   const { xGet, yGet } = getContext("LayerCake");
 
   export let data;

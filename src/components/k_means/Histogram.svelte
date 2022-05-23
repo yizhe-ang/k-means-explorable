@@ -1,37 +1,37 @@
 <script>
-  import { arc, select, brushX, histogram, scaleLinear, extent, area, curveBasis } from "d3";
+  import {
+    select,
+    brushX,
+    histogram,
+    scaleLinear,
+    extent,
+    area,
+    curveBasis
+  } from "d3";
   import { getContext } from "svelte";
   import { cubicIn, cubicOut } from "svelte/easing";
   import viewport from "$stores/viewport";
 
-  const { width, height, xScale, yScale, xGet, yGet } = getContext("LayerCake");
+  const { width, height, xScale } = getContext("LayerCake");
 
   export let data = [0, 0];
   export let type = "x";
-  export let show = false;
   export let inset;
   export let pointerEvents = "auto";
 
-  // TODO: Set height to be 10vw -ish
-  // FIXME: Why does the histogram shrink
-
   let isBrushing = false;
   let brushNode;
-  // let scaleY = 1;
 
   const accessor = type === "x" ? (d) => d.x : type === "y" ? (d) => d.y : null;
   $: histogramXScale = $xScale;
 
-  // const histogramHeight = 70;
   $: histogramHeight = Math.min(70, $viewport.width * 0.05);
-  // $: histogramHeight = show ? 70 : 35;
   const thresholds = 15;
 
   $: dataExtent = extent(data, accessor);
   $: dataExtentScaled = dataExtent.map(histogramXScale);
 
   // Draw histogram
-  // FIXME: Should I use KDE instead?
   $: histogramGenerator = histogram()
     .domain(histogramXScale.domain())
     .value(accessor)
@@ -55,16 +55,13 @@
     type === "x"
       ? `translate(${0}px, ${$height - histogramHeight - 4}px) scale(1, -1)`
       : type === "y"
-      ? `translate(${-$width + 1}px, ${-histogramHeight - 7}px) rotate(-90deg) scale(1, 1)`
+      ? `translate(${-$width + 1}px, ${
+          -histogramHeight - 7
+        }px) rotate(-90deg) scale(1, 1)`
       : null;
-  // $: transform =
-  //   type === "x"
-  //     ? `translate(${0}px, ${$height - histogramHeight - 4}px) scale(1, ${-1 * scaleY})`
-  //     : type === "y"
-  //     ? `translate(${-$width + 1}px, ${-histogramHeight - 7}px) rotate(-90deg) scale(1, ${scaleY})`
-  //     : null;
 
-  $: transformOrigin = type === "x" ? "bottom" : type === "y" ? "bottom right" : null;
+  $: transformOrigin =
+    type === "x" ? "bottom" : type === "y" ? "bottom right" : null;
 
   // Init brush
   $: brush = brushX()
@@ -91,7 +88,6 @@
   }
 
   function brushed({ selection }) {
-    console.log(selection);
     isBrushing = true;
 
     const extents = selection.map($xScale.invert);
@@ -108,16 +104,10 @@
     });
 
     data = data;
-
-    // Adjust resize handles
-    // brushNode.call(brushHandle, selection);
   }
 
   function brushable(node, move) {
     brushNode = select(node).call(brush).call(brush.move, move);
-
-    // Add resize handles
-    // brushNode.call(brushHandle, move);
 
     // Adjust pointer-events and cursors
     brushNode.select(".overlay").attr("pointer-events", "none");
@@ -126,10 +116,14 @@
     }
 
     // Cosmetic adjustments
-    brushNode.select(".selection").attr("fill-opacity", 0).attr("stroke", "none");
-    brushNode.selectAll(".handle").attr("fill", "var(--color-gray-400)").attr("rx", 100);
-    // .attr("stroke", "var(--color-gray-400)")
-    // .attr("stroke-width", 2);
+    brushNode
+      .select(".selection")
+      .attr("fill-opacity", 0)
+      .attr("stroke", "none");
+    brushNode
+      .selectAll(".handle")
+      .attr("fill", "var(--color-gray-400)")
+      .attr("rx", 100);
 
     return {
       update: (move) => {
@@ -138,7 +132,6 @@
     };
   }
 
-  // TODO: Incorporate easing
   function scaleY(node, { duration = 200, easing }) {
     return {
       duration,
@@ -146,7 +139,9 @@
         const eased = easing(t);
 
         return type === "x"
-          ? `transform: translate(${0}px, ${$height - histogramHeight - 4}px) scale(1, ${-eased})`
+          ? `transform: translate(${0}px, ${
+              $height - histogramHeight - 4
+            }px) scale(1, ${-eased})`
           : type === "y"
           ? `transform: translate(${-$width + 1}px, ${
               -histogramHeight - 7
@@ -176,9 +171,7 @@
   }
 
   path {
-    /* FIXME: Should this be springed? */
     transition: d 200ms;
     fill: var(--color-gray-200);
   }
-
 </style>

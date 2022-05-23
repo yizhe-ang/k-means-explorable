@@ -10,7 +10,6 @@
 <div>
   <label for={name}>{label}</label>
   <input onkeydown="return false" bind:value type="number" id={name} {name} {min} {max} {step} />
-  <!-- <input bind:value type="number" id={name} {name} {min} {max} {step} /> -->
 </div>
 
 <style>

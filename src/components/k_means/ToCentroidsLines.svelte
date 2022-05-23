@@ -8,13 +8,10 @@
   export let hoveredPoint;
 
   $: assignments = $assignmentsHistory[$assignmentsHistory.length - 1];
-
-  // $: console.log(hoveredPoint);
 </script>
 
 <!-- Lines to centroids -->
 {#each $centroids as c, i (`${i}-${hoveredPoint.i}`)}
-<!-- {#each $centroids as c, i} -->
   {@const isClosest = assignments[hoveredPoint.i] === i}
   <DemoLine
     data={[hoveredPoint.d, c]}

@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
   import { line, curveLinear } from "d3";
   import { draw } from "svelte/transition";
-  import { cubicOut, cubicIn } from "svelte/easing";
+  import { cubicIn } from "svelte/easing";
 
   const { xGet, yGet } = getContext("LayerCake");
 

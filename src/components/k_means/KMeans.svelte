@@ -1,10 +1,8 @@
 <script>
   import kMeans from "ml-kmeans";
-  import { range, shuffle, ascending, leastIndex } from "d3";
+  import { range, shuffle, ascending } from "d3";
   import { setContext, getContext } from "svelte";
-  import { writable, get } from "svelte/store";
-  import { fly } from "svelte/transition";
-  import { cubicIn, cubicOut } from "svelte/easing";
+  import { writable } from "svelte/store";
   import { copyShallowObjs, closest } from "$utils/helpers";
   import {
     selectedDataset,
@@ -37,10 +35,15 @@
   const numIterations = writable(0);
 
   // Store all chart data inside a context
-  setContext("KMeans", { data, centroids, centroidsHistory, assignmentsHistory, numIterations });
+  setContext("KMeans", {
+    data,
+    centroids,
+    centroidsHistory,
+    assignmentsHistory,
+    numIterations
+  });
 
   // Compute data
-  // FIXME: Blobs should be more separated
   const blobs = copyShallowObjs($datasets[0].data.slice(0, $numSamples));
 
   $: $data = updateData($selectedDataset, $numSamples);
@@ -48,16 +51,6 @@
     // Sample and make a copy
     return copyShallowObjs(selectedDataset.data.slice(0, numSamples));
   }
-
-  // Run k-means
-  // $: hardcodedCentroids =
-  //   $scrollyIndex <= 18
-  //     ? [
-  //         [0.17512741116924335, 0.09511374650596571],
-  //         [0.15580427014309572, 0.4734998043141523],
-  //         [0.7686469080284002, 0.85886101712695]
-  //       ]
-  //     : undefined;
 
   $: hardcodedCentroids =
     $scrollyIndex <= 18
@@ -68,26 +61,10 @@
         ]
       : undefined;
 
-  // 0: {x: 0.17512741116924335, y: 0.09511374650596571}
-  // 1: {x: 0.15580427014309572, y: 0.4734998043141523}
-  // 2: {x: 0.7686469080284002, y: 0.85886101712695}
-
-  // 0: {x: 0.16179830112769544, y: 0.19164149860204893}
-  // 1: {x: 0.3135735376934745, y: 0.34324934794666984}
-  // 2: {x: 0.8081586711872253, y: 0.6392492480733354}
-
   $: kMeansData = runKMeans($data, $numClusters, $toggleKMeans);
   function runKMeans(data, numClusters, toggleKMeans) {
-    console.log("run k-means");
+    // console.log("run k-means");
 
-    // Randomly init centroids
-    // const initCentroids =
-    //   hardcodedCentroids ||
-    //   range(numClusters).map(() => {
-    //     return Array.from({ length: 2 }, Math.random);
-    //   });
-
-    //   // FIXME: Should I pick from dataset instead? To be fair to rescaled data
     const initCentroids =
       hardcodedCentroids ||
       shuffle([...data])
@@ -113,7 +90,10 @@
         y: d.centroid[1]
       }));
     });
-    centroidsHistory = [initCentroids.map((d) => ({ x: d[0], y: d[1] })), ...centroidsHistory];
+    centroidsHistory = [
+      initCentroids.map((d) => ({ x: d[0], y: d[1] })),
+      ...centroidsHistory
+    ];
 
     // Sort the centroids
     // FIXME: Make this more efficient?
@@ -145,7 +125,7 @@
 
   // Scrolly events that changes data
   let timeout;
-  $: console.log("step", $scrollyIndex);
+  // $: console.log("step", $scrollyIndex);
   $: runScrollyEvents($scrollyIndex);
   function runScrollyEvents(index) {
     if (index === undefined) {
@@ -161,8 +141,6 @@
       });
       $data = $data;
     } else if (index === 2) {
-      console.log($data);
-
       // FIXME: To destroy the timeout when the index changes?
       // Init y positions
       timeout = setTimeout(() => {
@@ -175,8 +153,6 @@
         $data.map((d, i) => (d.x = blobs[i].x));
         $data = $data;
       }, 900);
-
-      // FIXME: K-means with this dataset is not very deterministic
     } else if (index === 3) {
       // $data.map((d, i) => {
       //   d.x = blobs[i].x;
@@ -186,14 +162,6 @@
       // clearTimeout(timeout);
     }
   }
-
-  // function getData() {
-  //   // return range(50).map((_) => ({
-  //   //   x: Math.random(),
-  //   //   y: Math.random()
-  //   // }));
-  //   return range(50).map((_) => [Math.random(), Math.random()]);
-  // }
 </script>
 
 <!-- Control panel -->
@@ -201,7 +169,10 @@
   <div class="ui-wrapper">
     <!-- Iteration counter -->
     {#if $scrollyIndex >= 12}
-      <IterationCounter numIterations={$numIterations} totalIterations={$totalIterations - 1} />
+      <IterationCounter
+        numIterations={$numIterations}
+        totalIterations={$totalIterations - 1}
+      />
     {/if}
   </div>
 
