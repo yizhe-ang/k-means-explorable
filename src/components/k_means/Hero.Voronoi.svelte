@@ -2,11 +2,11 @@
   import { getContext, onDestroy } from "svelte";
   import { Delaunay } from "d3";
   import { clusterColors } from "$stores/misc";
-  import { getRandom, getRandomInt } from "$utils/helpers";
-  import { fade, blur, fly, slide, scale, draw } from "svelte/transition";
-  import { cubicOut, cubicIn } from "svelte/easing";
+  import { getRandom } from "$utils/helpers";
+  import { fade, scale } from "svelte/transition";
+  import { cubicOut } from "svelte/easing";
 
-  const { data, xGet, yGet, xScale, yScale, width, height } = getContext("LayerCake");
+  const { data, xGet, yGet, width, height } = getContext("LayerCake");
 
   let hoveredIndex = null;
   let neighboringIndices = [];
@@ -45,8 +45,14 @@
 <defs>
   {#each indicesToRender as index, i (index)}
     <linearGradient id={`grad${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:{getRandom(clusterColors)};stop-opacity:1" />
-      <stop offset="100%" style="stop-color:{getRandom(clusterColors)};stop-opacity:1" />
+      <stop
+        offset="0%"
+        style="stop-color:{getRandom(clusterColors)};stop-opacity:1"
+      />
+      <stop
+        offset="100%"
+        style="stop-color:{getRandom(clusterColors)};stop-opacity:1"
+      />
     </linearGradient>
   {/each}
 </defs>
@@ -102,5 +108,4 @@
 
     /* transition: all 200ms; */
   }
-
 </style>
