@@ -1,6 +1,5 @@
 {
-  "name": "svelte-starter",
-  "version": "3.0.24",
+  "name": "k-means-explorable",
   "scripts": {
     "gdoc": "node tasks/fetch-google.js",
     "style": "node tasks/style-dictionary.js",
@@ -44,5 +43,5 @@
     "node": "16.x"
   },
   "browserslist": "> 0.5%, last 4 versions, not ie <= 11, not ie_mob <= 11",
-  "subdirectory": "svelte-starter"
+  "subdirectory": "k-means-explorable"
 }
