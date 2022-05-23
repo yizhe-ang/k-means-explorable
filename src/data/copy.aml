@@ -1,0 +1,52 @@
+:skip
+Only two levels deep?
+:endskip
+[steps]
+
+:skip
+################################################################################
+:endskip
+type: step
+[.value]
+
+type: h2
+[+.value]
+Introduction
+[]
+
+type: p
+[+.value]
+Imagine you’re a cattologist, trying to identify <b>different groups</b> of species of cats (rocks / minerals). You go out into the field to collect measurements of chonkiness and fur color - key features which you believe are important in their differentiation.
+[]
+[]
+:skip
+################################################################################
+:endskip
+type: step
+[.value]
+
+type: p
+[+.value]
+So you have at hand measurements of 100 cats you’ve encountered. Visualizing them as a scatter plot, it turns out that you can conveniently identify distinct clusters - cats which have similar measurements must be from the same species.
+[]
+[]
+:skip
+################################################################################
+:endskip
+type: step
+[.value]
+
+type: p
+[+.value]
+Sample paragraph 1
+[]
+
+type: p
+[+.value]
+Sample paragraph 2
+b: Bolded word
+[]
+[]
+:skip
+################################################################################
+:endskip

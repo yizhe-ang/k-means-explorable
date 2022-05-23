@@ -1,0 +1,177 @@
+
+body {
+	background-color: var(--color-bg);
+  color: var(--color-fg);
+	line-height: 1.4;
+	font-family: var(--font-body);
+	font-feature-settings: 'kern' 1, 'onum' 0, 'liga' 0, 'tnum' 1;
+	text-rendering: optimizeLegibility;
+  word-wrap: break-word;
+	-webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 1rem 0;
+}
+
+mark {
+  background-color: var(--color-highlight);
+  padding: 0 0.25rem;
+}
+
+a {
+  color: var(--color-link);
+}
+
+img,
+video {
+	display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+select,
+textarea,
+input[type="submit"],
+input[type="button"] {
+	-webkit-appearance: none;
+	appearance: none;
+  background-color: var(--color-form-bg);
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--color-form-fg);
+  font-family: var(--font-form);
+  font-size: inherit;
+  outline: none;
+  padding: 8px;
+}
+
+button,
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+input[type="submit"],
+select {
+  cursor: pointer;
+}
+
+input[type="button"],
+input[type="range"],
+input[type="submit"],
+select {
+  display: inline-block;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  background: var(--color-form-bg);
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px var(--color-focus);
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption,
+td,
+th {
+  text-align: left;
+}
+
+td,
+th {
+  padding: 8px;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+thead {
+  border-bottom: 1px solid var(--color-border);
+}
+
+tfoot {
+  border-top: 1px solid var(--color-border);
+}
+
+::-moz-placeholder {
+  color: var(--color-placeholder);
+}
+
+:-ms-input-placeholder {
+  color: var(--color-placeholder);
+}
+
+::-ms-input-placeholder {
+  color: var(--color-placeholder);
+}
+
+::placeholder {
+  color: var(--color-placeholder);
+}
+
+::-moz-selection {
+  background-color: var(--color-selection);
+}
+::selection {
+  background-color: var(--color-selection);
+}
+
+select {
+	padding-right: 24px;
+	background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20448%22%20enable-background%3D%22new%200%200%20256%20448%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E.arrow%7Bfill%3A%23424242%3B%7D%3C%2Fstyle%3E%3Cpath%20class%3D%22arrow%22%20d%3D%22M255.9%20168c0-4.2-1.6-7.9-4.8-11.2-3.2-3.2-6.9-4.8-11.2-4.8H16c-4.2%200-7.9%201.6-11.2%204.8S0%20163.8%200%20168c0%204.4%201.6%208.2%204.8%2011.4l112%20112c3.1%203.1%206.8%204.6%2011.2%204.6%204.4%200%208.2-1.5%2011.4-4.6l112-112c3-3.2%204.5-7%204.5-11.4z%22%2F%3E%3C%2Fsvg%3E%0A");
+  background-position: right 8px center;
+  background-repeat: no-repeat;
+  background-size: auto 50%;
+}
+
+.skip-to-main {
+	border: none;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+}
+
+.skip-to-main:focus {
+	background-color: var(--color-gray-900);
+	color: var(--color-white);
+	width: auto;
+	height: auto;
+	padding: 8px;
+	z-index: var(--z-overlay);
+}
+
+.sr-only {
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}

@@ -1,0 +1,21 @@
+:skip
+Only two levels deep?
+:endskip
+[+steps]
+
+:skip
+Step 1 #########################################################################
+:endskip
+[step-1.value]
+
+type: p
+value: Sample paragraph 1
+
+type: p
+[+.value]
+Sample paragraph 2
+
+b: Bolded word
+[]
+
+[]

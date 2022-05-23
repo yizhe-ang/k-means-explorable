@@ -1,0 +1,42 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"$lib": [
+				"src"
+			],
+			"$lib/*": [
+				"src/*"
+			],
+			"$actions/*": [
+				"src/actions/*"
+			],
+			"$components/*": [
+				"src/components/*"
+			],
+			"$data/*": [
+				"src/data/*"
+			],
+			"$stores/*": [
+				"src/stores/*"
+			],
+			"$styles/*": [
+				"src/styles/*"
+			],
+			"$svg/*": [
+				"src/svg/*"
+			],
+			"$utils/*": [
+				"src/utils/*"
+			],
+		}
+	},
+	"include": [
+		"src/**/*.js",
+		"src/**/*.svelte"
+	],
+	"exclude": [
+		"tasks/*.js"
+	],
+	"extends": "./.svelte-kit/tsconfig.json"
+}
