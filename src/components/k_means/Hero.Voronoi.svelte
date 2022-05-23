@@ -1,6 +1,6 @@
 <script>
   import { getContext, onDestroy } from "svelte";
-  import { Delaunay } from "d3-delaunay";
+  import { Delaunay } from "d3";
   import { clusterColors } from "$stores/misc";
   import { getRandom, getRandomInt } from "$utils/helpers";
   import { fade, blur, fly, slide, scale, draw } from "svelte/transition";
