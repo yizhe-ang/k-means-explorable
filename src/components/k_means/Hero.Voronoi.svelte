@@ -44,6 +44,7 @@
 <!-- TODO: at random angles? -->
 <defs>
   {#each indicesToRender as index, i (index)}
+    <!-- {#each points as point, index (index)} -->
     <linearGradient id={`grad${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
       <stop
         offset="0%"
@@ -59,6 +60,7 @@
 
 <!-- Voronoi -->
 {#each indicesToRender as index, i (index)}
+  <!-- {#each points as point, index (index)} -->
   <path
     in:scale={{ opacity: 0, duration: 300, easing: cubicOut, delay: i * 30 }}
     out:fade={{ duration: 200, easing: cubicOut, delay: i * 50 }}
