@@ -85,7 +85,7 @@
   }
 
   /* TODO: Mobile view */
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     .wrapper {
       flex-direction: column-reverse;
     }
@@ -94,5 +94,5 @@
       width: 95%;
       margin: auto;
     }
-  }
+  } */
 </style>

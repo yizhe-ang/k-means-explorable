@@ -1,5 +1,5 @@
 <script>
-  // TODO:
+  // TODO: Change metadata
   export let title = "K-Means Explorable";
   export let description = "Description TK";
   export let url = "https://pudding.cool";

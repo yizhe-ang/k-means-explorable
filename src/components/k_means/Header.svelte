@@ -18,6 +18,16 @@
     pointer-events: auto;
   }
 
+  @media (max-width: 50rem) {
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    h4 {
+      font-size: 2rem;
+    }
+  }
+
   p {
     font-size: 1.3rem;
     font-weight: 250;

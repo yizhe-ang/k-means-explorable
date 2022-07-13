@@ -1,30 +1,33 @@
 <script>
   import MaxWidthWrapper from "$components/layouts/MaxWidthWrapper.svelte";
   import SectionTitle from "$components/k_means/SectionTitle.svelte";
+  import Link from "$components/k_means/Link.svelte";
 </script>
 
 <div class="wrapper">
   <MaxWidthWrapper maxWidth={"70ch"}>
-    <SectionTitle tag={"h2"} index={"4."} title={"Further Reading"} />
+    <SectionTitle tag={"h2"} index={"4."} title={"References"} />
     <p>
-      The following are resources I'd consulted heavily while creating this article, and are great
-      starting points for further reading:
+      The following are resources I'd consulted heavily while creating this
+      article, and are great starting points for further reading:
     </p>
     <ul>
       <li>
-        The <a href="https://developers.google.com/machine-learning/clustering"
-          >Clustering in Machine Learning</a
+        The <Link
+          href="https://developers.google.com/machine-learning/clustering"
+          >Clustering in Machine Learning</Link
         > course from the Google Developers site.
       </li>
       <li>
-        Scikit-learn's documentation for <a
+        Scikit-learn's documentation for <Link
           href="https://scikit-learn.org/stable/modules/clustering.html#k-means"
-          >K-means clustering</a
+          >K-means clustering</Link
         >.
       </li>
       <li>
-        Chapter 21.3 of the <a href="https://probml.github.io/pml-book/book1.html"
-          >Probabilistic Machine Learning: An Introduction</a
+        Chapter 21.3 of the <Link
+          href="https://probml.github.io/pml-book/book1.html"
+          >Probabilistic Machine Learning: An Introduction</Link
         > textbook by Kevin Patrick Murphy.
       </li>
     </ul>
@@ -34,7 +37,7 @@
 <style>
   .wrapper {
     margin-top: -15vh;
-    padding-bottom: 200px
+    padding-bottom: 64px;
   }
 
   ul {

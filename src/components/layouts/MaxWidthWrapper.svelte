@@ -1,6 +1,6 @@
 <script>
   export let maxWidth = "50ch";
-  export let padding = "16px"; // Amount of left / right padding
+  export let padding = "32px"; // Amount of left / right padding
 </script>
 
 <div style:max-width={maxWidth} style:padding-left={padding} style:padding-right={padding}>

@@ -4,7 +4,6 @@
   import { useTabsContext } from "@rgossiaux/svelte-headlessui";
 
   export let selectedIndex;
-  $: console.log(selectedIndex);
 
   const { scrollyIndex } = getContext("Scrolly");
   const api = useTabsContext();

@@ -4,19 +4,35 @@
   import Conclusion from "$lib/components/k_means/Conclusion.svelte";
   import Footer from "$lib/components/k_means/Footer.svelte";
   import scrollY from "$stores/scrollY.js";
+  import Header from "$components/k_means/Header.svelte";
+  import Notification from "$components/k_means/Notification.svelte";
+  import mq from "$stores/mq.js";
 </script>
 
-{#if $scrollY === 0}
+{#if $scrollY === 0 && $mq["50rem"]}
   <Hero />
 {/if}
 
-<!-- FIXME: Do I need these semantic tags? -->
-<section id="scrolly">
-  <KMeansScrolly />
-</section>
+{#if $mq["50rem"]}
+  <!-- FIXME: Do I need these semantic tags? -->
+  <section id="scrolly">
+    <KMeansScrolly />
+  </section>
 
-<Conclusion />
+  <Conclusion />
+{:else}
+  <div class="header-wrapper">
+    <Header />
+  </div>
+  <Notification />
+{/if}
+
 <Footer />
 
 <style>
+  .header-wrapper {
+    display: grid;
+    place-content: center;
+    padding: 48px 32px;
+  }
 </style>
