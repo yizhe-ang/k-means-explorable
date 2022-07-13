@@ -1,7 +1,7 @@
 <script>
   // TODO: Change metadata
   export let title = "K-Means Explorable";
-  export let description = "Description TK";
+  export let description = "K-Means Clustering: An Explorable Explainer";
   export let url = "https://pudding.cool";
   export let keywords = "";
   export let preloadFont = [];
