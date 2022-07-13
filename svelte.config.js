@@ -1,5 +1,4 @@
-import adapter from "@sveltejs/adapter-auto"
-// import adapter from "@sveltejs/adapter-static";
+import adapter from "@sveltejs/adapter-auto";
 import autoprefixer from "autoprefixer";
 import dsv from "@rollup/plugin-dsv";
 import path from "path";
@@ -7,7 +6,9 @@ import { readFileSync } from "fs";
 import sveltePreprocess from "svelte-preprocess";
 import svg from "vite-plugin-svgstring";
 
-const { version, subdirectory } = JSON.parse(readFileSync("package.json", "utf8"));
+const { version, subdirectory } = JSON.parse(
+  readFileSync("package.json", "utf8")
+);
 const dev = process.env.NODE_ENV === "development";
 const dir = subdirectory || "";
 const prefix = dir.startsWith("/") ? "" : "/";
@@ -22,8 +23,7 @@ const preprocess = sveltePreprocess({
 const config = {
   preprocess,
   kit: {
-    // FIXME: Decide which adapter to use; static or no?
-		adapter: adapter(),
+    adapter: adapter(),
     // Prerender everything except pages that are explicitly marked as not prerenderable
     prerender: { default: true },
     files: { lib: "./src" },

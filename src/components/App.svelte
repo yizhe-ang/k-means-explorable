@@ -6,7 +6,16 @@
   import scrollY from "$stores/scrollY.js";
   import Header from "$components/k_means/Header.svelte";
   import Notification from "$components/k_means/Notification.svelte";
+  import Loading from "$components/k_means/Loading.svelte";
   import mq from "$stores/mq.js";
+  import { onMount } from "svelte";
+
+  let mounted = false;
+
+  onMount(() => {
+    mounted = true;
+    console.log("mounted");
+  });
 </script>
 
 {#if $scrollY === 0 && $mq["50rem"]}
@@ -28,6 +37,10 @@
 {/if}
 
 <Footer />
+
+{#if !mounted}
+  <Loading />
+{/if}
 
 <style>
   .header-wrapper {
