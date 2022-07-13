@@ -1,10 +1,8 @@
 <script>
   import { clusterColors, stepView } from "$stores/misc";
   import { LayerCake, Svg, Html } from "layercake";
-  import { ascending, extent } from "d3";
   import { fade } from "svelte/transition";
   import { getContext } from "svelte";
-  import KMeansScatter from "$lib/components/k_means/KMeans.Scatter.svelte";
   import Line from "$lib/components/k_means/Line.svelte";
   import Scatter from "$lib/components/k_means/Scatter.svelte";
   import CircleSpringed from "$lib/components/k_means/Circle.Springed.svelte";
