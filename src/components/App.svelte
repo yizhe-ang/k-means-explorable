@@ -14,7 +14,6 @@
 
   onMount(() => {
     mounted = true;
-    console.log("mounted");
   });
 </script>
 

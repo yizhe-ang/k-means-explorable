@@ -1,8 +1,14 @@
+<script>
+  import Link from "$components/k_means/Link.svelte";
+</script>
+
 <div class="wrapper">
   <h1>K-Means<br />Clustering</h1>
   <h4>An Explorable Explainer</h4>
-  <p>By <a href="https://yizhe-ang.github.io/">Yi Zhe Ang</a></p>
+  <p>By <Link href="https://yizhe-ang.github.io/">Yi Zhe Ang</Link></p>
 </div>
+
+<Link />
 
 <style>
   h1 {
