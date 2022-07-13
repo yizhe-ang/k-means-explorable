@@ -80,7 +80,7 @@ button:focus,
 input:focus,
 select:focus,
 textarea:focus {
-  box-shadow: 0 0 0 2px var(--color-focus);
+  /* box-shadow: 0 0 0 2px var(--color-focus); */
 }
 
 button:disabled,

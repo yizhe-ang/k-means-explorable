@@ -2,6 +2,7 @@
   import Hero from "$components/k_means/Hero.svelte";
   import KMeansScrolly from "$lib/components/k_means/KMeans.Scrolly.svelte";
   import Conclusion from "$lib/components/k_means/Conclusion.svelte";
+  import Footer from "$lib/components/k_means/Footer.svelte";
   import scrollY from "$stores/scrollY.js";
 </script>
 
@@ -15,6 +16,7 @@
 </section>
 
 <Conclusion />
+<Footer />
 
 <style>
 </style>

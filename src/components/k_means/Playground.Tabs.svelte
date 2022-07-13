@@ -1,6 +1,8 @@
 <script>
+  import { getContext } from "svelte";
   import DatasetRadioGroup from "$components/k_means/DatasetRadioGroup.svelte";
   import KMeansStepper from "$components/k_means/KMeans.Stepper.svelte";
+  import TabControl from "$components/k_means/TabControl.svelte";
   import {
     Tab,
     TabGroup,
@@ -30,6 +32,7 @@
         $algoStep = -1;
       }
     }}
+    let:selectedIndex
   >
     <TabList class={"tab-list"}>
       {#each tabs as t}
@@ -47,6 +50,7 @@
         <TabPanel class={"tab-panel"}><svelte:component this={p} /></TabPanel>
       {/each}
     </TabPanels>
+    <TabControl {selectedIndex} />
   </TabGroup>
 </div>
 

@@ -258,6 +258,7 @@
 <!-- Interactive centroids -->
 {#if ($scrollyIndex >= 8 && $scrollyIndex <= 11) || $scrollyIndex >= 13}
   {#each centroidData as d, i (key(i))}
+    <!-- FIXME: Is the scale transition not causing the circles not to appear on firefox? -->
     <circle
       in:scale={{
         duration: 300,
