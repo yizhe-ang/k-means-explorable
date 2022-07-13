@@ -4,7 +4,6 @@
   import { browser } from "$app/env";
   import Meta from "$components/Meta.svelte";
   import App from "$components/App.svelte";
-  import copy from "$data/doc.json";
   // FIXME: What is the best practice for loading datasets?
   import blobs from "$lib/data/datasets/blobs_alt.json";
   import anisoBlobs from "$data/datasets/aniso_blobs.json";
@@ -34,5 +33,5 @@
   setContext("copy", copy);
 </script>
 
-<Meta {title} {description} {url} {preloadFont} {keywords} />
+<Meta />
 <App />
