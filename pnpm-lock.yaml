@@ -1,9 +1,9 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@fontsource/hahmlet': ^4.5.10
   '@fontsource/inter': ^4.5.7
-  '@rgossiaux/svelte-headlessui': ^1.0.0
+  '@rgossiaux/svelte-headlessui': github:jangxyz/svelte-headlessui#package
   '@rollup/plugin-dsv': ^2.0.3
   '@sveltejs/adapter-auto': 1.0.0-next.34
   '@sveltejs/adapter-static': 1.0.0-next.30
@@ -32,7 +32,7 @@ specifiers:
 devDependencies:
   '@fontsource/hahmlet': 4.5.11
   '@fontsource/inter': 4.5.10
-  '@rgossiaux/svelte-headlessui': 1.0.1_svelte@3.48.0
+  '@rgossiaux/svelte-headlessui': github.com/jangxyz/svelte-headlessui/97c869f5e22ee0fd58389f835541591b4c32983b_svelte@3.48.0
   '@rollup/plugin-dsv': 2.0.3_rollup@2.74.1
   '@sveltejs/adapter-auto': 1.0.0-next.34
   '@sveltejs/adapter-static': 1.0.0-next.30
@@ -48,13 +48,13 @@ devDependencies:
   node-fetch: 3.2.4
   postcss: 8.4.14
   prettier: 2.6.2
-  prettier-plugin-svelte: 2.7.0_prettier@2.6.2+svelte@3.48.0
+  prettier-plugin-svelte: 2.7.0_kkjbqzpydplecjtkxrgomroeru
   rollup: 2.74.1
   rollup-plugin-svg: 2.0.0
   scrollama: 3.1.1
   style-dictionary: 3.7.0
   svelte: 3.48.0
-  svelte-preprocess: 4.10.6_postcss@8.4.14+svelte@3.48.0
+  svelte-preprocess: 4.10.6_s3dopqgs4h45owyu2kxaf6kyfu
   tippy.js: 6.3.7
   vite-plugin-svgstring: 1.0.0
 
@@ -74,14 +74,6 @@ packages:
 
   /@popperjs/core/2.11.5:
     resolution: {integrity: sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==}
-    dev: true
-
-  /@rgossiaux/svelte-headlessui/1.0.1_svelte@3.48.0:
-    resolution: {integrity: sha512-Gp8Chf6moPiXAhVjtT0KiCBsv+4rPob85ctpyNGgjFkyA8PL7Hmb19FDZd+Z0o9JhCh4kYYqTfVl1TVo9L3F9w==}
-    peerDependencies:
-      svelte: ^3.44.0
-    dependencies:
-      svelte: 3.48.0
     dev: true
 
   /@rollup/plugin-dsv/2.0.3_rollup@2.74.1:
@@ -704,6 +696,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [android]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -712,6 +705,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [android]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -720,6 +714,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -728,6 +723,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -736,6 +732,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [freebsd]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -744,6 +741,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [freebsd]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -752,6 +750,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [ia32]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -760,6 +759,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -768,6 +768,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -776,6 +777,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -784,6 +786,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [mips64el]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -792,6 +795,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [ppc64]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -800,6 +804,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [riscv64]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -808,6 +813,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [s390x]
     os: [linux]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -816,6 +822,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [netbsd]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -824,6 +831,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [openbsd]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -832,6 +840,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [sunos]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -840,6 +849,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [ia32]
     os: [win32]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -848,6 +858,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -856,6 +867,7 @@ packages:
     engines: {node: '>=12'}
     cpu: [arm64]
     os: [win32]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -954,6 +966,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -1325,7 +1338,7 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /prettier-plugin-svelte/2.7.0_prettier@2.6.2+svelte@3.48.0:
+  /prettier-plugin-svelte/2.7.0_kkjbqzpydplecjtkxrgomroeru:
     resolution: {integrity: sha512-fQhhZICprZot2IqEyoiUYLTRdumULGRvw0o4dzl5jt0jfzVWdGqeYW27QTWAeXhoupEZJULmNoH3ueJwUWFLIA==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
@@ -1500,7 +1513,7 @@ packages:
       svelte: 3.48.0
     dev: true
 
-  /svelte-preprocess/4.10.6_postcss@8.4.14+svelte@3.48.0:
+  /svelte-preprocess/4.10.6_s3dopqgs4h45owyu2kxaf6kyfu:
     resolution: {integrity: sha512-I2SV1w/AveMvgIQlUF/ZOO3PYVnhxfcpNyGt8pxpUVhPfyfL/CZBkkw/KPfuFix5FJ9TnnNYMhACK3DtSaYVVQ==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -1649,4 +1662,15 @@ packages:
 
   /wrappy/1.0.2:
     resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=}
+    dev: true
+
+  github.com/jangxyz/svelte-headlessui/97c869f5e22ee0fd58389f835541591b4c32983b_svelte@3.48.0:
+    resolution: {tarball: https://codeload.github.com/jangxyz/svelte-headlessui/tar.gz/97c869f5e22ee0fd58389f835541591b4c32983b}
+    id: github.com/jangxyz/svelte-headlessui/97c869f5e22ee0fd58389f835541591b4c32983b
+    name: '@rgossiaux/svelte-headlessui'
+    version: 1.0.2
+    peerDependencies:
+      svelte: ^3.44.0
+    dependencies:
+      svelte: 3.48.0
     dev: true
