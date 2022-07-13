@@ -6,7 +6,6 @@ specifiers:
   '@rgossiaux/svelte-headlessui': github:jangxyz/svelte-headlessui#package
   '@rollup/plugin-dsv': ^2.0.3
   '@sveltejs/adapter-auto': 1.0.0-next.34
-  '@sveltejs/adapter-static': 1.0.0-next.30
   '@sveltejs/kit': 1.0.0-next.336
   archieml: ^0.5.0
   autoprefixer: ^10.4.7
@@ -25,8 +24,8 @@ specifiers:
   scrollama: ^3.1.1
   style-dictionary: ^3.1.1
   svelte: ^3.48.0
+  svelte-loading-spinners: ^0.1.7
   svelte-preprocess: ^4.10.6
-  tippy.js: ^6.3.7
   vite-plugin-svgstring: ^1.0.0
 
 devDependencies:
@@ -35,7 +34,6 @@ devDependencies:
   '@rgossiaux/svelte-headlessui': github.com/jangxyz/svelte-headlessui/97c869f5e22ee0fd58389f835541591b4c32983b_svelte@3.48.0
   '@rollup/plugin-dsv': 2.0.3_rollup@2.74.1
   '@sveltejs/adapter-auto': 1.0.0-next.34
-  '@sveltejs/adapter-static': 1.0.0-next.30
   '@sveltejs/kit': 1.0.0-next.336_svelte@3.48.0
   archieml: 0.5.0
   autoprefixer: 10.4.7_postcss@8.4.14
@@ -54,8 +52,8 @@ devDependencies:
   scrollama: 3.1.1
   style-dictionary: 3.7.0
   svelte: 3.48.0
+  svelte-loading-spinners: 0.1.7
   svelte-preprocess: 4.10.6_s3dopqgs4h45owyu2kxaf6kyfu
-  tippy.js: 6.3.7
   vite-plugin-svgstring: 1.0.0
 
 packages:
@@ -70,10 +68,6 @@ packages:
 
   /@iarna/toml/2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
-    dev: true
-
-  /@popperjs/core/2.11.5:
-    resolution: {integrity: sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==}
     dev: true
 
   /@rollup/plugin-dsv/2.0.3_rollup@2.74.1:
@@ -127,12 +121,6 @@ packages:
     dependencies:
       '@iarna/toml': 2.2.5
       esbuild: 0.14.39
-      tiny-glob: 0.2.9
-    dev: true
-
-  /@sveltejs/adapter-static/1.0.0-next.30:
-    resolution: {integrity: sha512-xJPOXuj4T/lw9pZpMQAoN68TgrOPp/zOldvSFA+A5CIhb8yLXkgxOWh6UDUrbVxM1NjOdt8lwPdZfdkh5FL2Fg==}
-    dependencies:
       tiny-glob: 0.2.9
     dev: true
 
@@ -1513,6 +1501,10 @@ packages:
       svelte: 3.48.0
     dev: true
 
+  /svelte-loading-spinners/0.1.7:
+    resolution: {integrity: sha512-EKCId1DjVL2RSUVJJsvtNcqQHox03XIgh4xh/4p7r6ST7d8mut6INY9/LqK4A17PFU64+3quZmqiSfOlf480CA==}
+    dev: true
+
   /svelte-preprocess/4.10.6_s3dopqgs4h45owyu2kxaf6kyfu:
     resolution: {integrity: sha512-I2SV1w/AveMvgIQlUF/ZOO3PYVnhxfcpNyGt8pxpUVhPfyfL/CZBkkw/KPfuFix5FJ9TnnNYMhACK3DtSaYVVQ==}
     engines: {node: '>= 9.11.2'}
@@ -1578,12 +1570,6 @@ packages:
 
   /tinycolor2/1.4.2:
     resolution: {integrity: sha512-vJhccZPs965sV/L2sU4oRQVAos0pQXwsvTLkWYdqJ+a8Q5kPFzJTuOFwy7UniPli44NKQGAglksjvOcpo95aZA==}
-    dev: true
-
-  /tippy.js/6.3.7:
-    resolution: {integrity: sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==}
-    dependencies:
-      '@popperjs/core': 2.11.5
     dev: true
 
   /to-regex-range/5.0.1:
