@@ -1,11 +1,11 @@
 <script>
-  // TODO: Change metadata
-  export let title = "K-Means Explorable";
-  export let description = "An Explorable Explainable of K-Means Clustering";
+  // export let title = "K-Means Explorable";
+  export let title = "K-Means Clustering: An Explorable Explainer";
+  export let description = "An Explorable Explainer of K-Means Clustering";
   export let url = "https://k-means-explorable.vercel.app/";
   export let keywords =
-    "k-means, clustering, machine learning, explorable, explain";
-  export let socialImg = "";
+    "k-means, clustering, machine learning, explorable, explainer, interactive, ai, visualization";
+  export let socialImg = "https://k-means-explorable.vercel.app/social.png";
   // export let preloadFont = []
 </script>
 
@@ -28,11 +28,11 @@
   <meta property="og:image:height" content="600" /> -->
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="https://pudding.cool" />
-  <meta name="twitter:creator" content="@puddingviz" />
+  <meta name="twitter:site" content="https://yizhe-ang.github.io/" />
+  <meta name="twitter:creator" content="@yizhe_ang" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image:src" content="{url}/assets/social-twitter.jpg" />
+  <meta name="twitter:image:src" content={socialImg} />
 
   <meta name="robots" content="max-image-preview:large" />
 
