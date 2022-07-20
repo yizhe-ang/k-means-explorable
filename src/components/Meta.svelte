@@ -1,10 +1,9 @@
 <script>
-  // export let title = "K-Means Explorable";
   export let title = "K-Means Clustering: An Explorable Explainer";
   export let description = "An Explorable Explainer of K-Means Clustering";
   export let url = "https://k-means-explorable.vercel.app/";
   export let keywords =
-    "k-means, clustering, machine learning, explorable, explainer, interactive, ai, visualization";
+    "k-means, clustering, unsupervised, machine learning, explorable, explainer, interactive, ai, visualization, tutorial";
   export let socialImg = "https://k-means-explorable.vercel.app/social.png";
   // export let preloadFont = []
 </script>

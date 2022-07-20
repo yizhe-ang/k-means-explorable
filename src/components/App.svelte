@@ -22,7 +22,6 @@
 {/if}
 
 {#if $mq["50rem"]}
-  <!-- FIXME: Do I need these semantic tags? -->
   <section id="scrolly">
     <KMeansScrolly />
   </section>

@@ -1,4 +1,4 @@
-import { randomLcg, schemePastel1, shuffler } from "d3";
+import { randomLcg, shuffler } from "d3";
 
 import anisoBlobs from "$data/datasets/aniso_blobs.json";
 import blobs from "$lib/data/datasets/blobs_alt.json";
@@ -15,7 +15,7 @@ export const clusterColors = [
   "hsl(51, 90%, 71%)", // yellow
   "hsl(262, 48%, 85%)", // purple
   "hsl(14, 100%, 84%)", // orange
-  "hsl(359, 100%, 89%)", // pink
+  "hsl(359, 100%, 89%)" // pink
 ];
 // export const clusterColors = [
 //   "hsl(40, 72%, 81%)",
@@ -30,12 +30,18 @@ const shuffle = shuffler(randomLcg(45));
 
 // FIXME: Where to perform preprocessing?
 // FIXME: Set this as readable only?
-const processedDatasets = Object.entries({ blobs, anisoBlobs, unevenBlobs, variedBlobs, circles, moons, noStructure }).map(
-  (d) => ({
-    name: d[0],
-    data: shuffle(d[1]).map((arr) => ({ x: arr[0], y: arr[1] }))
-  })
-);
+const processedDatasets = Object.entries({
+  blobs,
+  anisoBlobs,
+  unevenBlobs,
+  variedBlobs,
+  circles,
+  moons,
+  noStructure
+}).map((d) => ({
+  name: d[0],
+  data: shuffle(d[1]).map((arr) => ({ x: arr[0], y: arr[1] }))
+}));
 export const datasets = writable(processedDatasets);
 export const selectedDataset = writable(processedDatasets[0]);
 export const numSamples = writable(100);

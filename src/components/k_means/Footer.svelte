@@ -12,7 +12,7 @@
     <div class="content-wrapper">
       <p class="acknowledgements">
         Special thanks to <Link href="https://jetnew.io/">Jet New</Link> and <Link
-          href="https://www.linkedin.com/in/chan-guan-hao/">Chan Guan Hao</Link
+          href="https://www.linkedin.com/in/chan-guan-hao/">Guan Hao Chan</Link
         > for their awesome feedback
         on this article.
       </p>
@@ -100,5 +100,6 @@
 
   .acknowledgements {
     font-style: italic;
+    font-size: 1rem;
   }
 </style>
