@@ -132,7 +132,6 @@
       // All points start from zero
       // $data = range(numSamples).map((_) => [0, 0]);
     } else if (index === 1) {
-      // TODO: Show ToC
       clearTimeout(timeout);
 
       $data.map((d) => {
@@ -141,7 +140,6 @@
       });
       $data = $data;
     } else if (index === 2) {
-      // FIXME: To destroy the timeout when the index changes?
       // Init y positions
       timeout = setTimeout(() => {
         $data.map((d, i) => (d.y = blobs[i].y));

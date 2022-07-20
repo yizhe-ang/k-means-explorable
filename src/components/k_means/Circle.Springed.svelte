@@ -19,7 +19,6 @@
   export let pointerEvents = "auto";
 
   // Every circle has its own spring store as its state
-  // TODO: Adjust the spring parameters
   const position = spring(undefined);
   $: $position = [$xGet(d), $yGet(d)];
 

@@ -4,7 +4,6 @@
   export let title;
 </script>
 
-<!-- TODO: Gradient for h2 -->
 <svelte:element this={tag} style:margin-top={tag === "h2" ? "32px" : null}>
   <span class="index">{index}</span>
   {title}

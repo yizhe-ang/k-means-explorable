@@ -28,8 +28,6 @@
   });
 </script>
 
-<!-- TODO: Clicking each section title shows the ToC -->
-
 <div
   class="wrapper"
   style:pointer-events={$scrollyIndex === 0 ? "none" : "auto"}
@@ -84,7 +82,6 @@
     z-index: 10;
   }
 
-  /* TODO: Mobile view */
   /* @media screen and (max-width: 768px) {
     .wrapper {
       flex-direction: column-reverse;

@@ -141,7 +141,6 @@
   figure {
     width: 100%;
     /* width: 65vh; */
-    /* FIXME: Not widely supported? */
     aspect-ratio: 1 / 1;
     /* margin-left: auto; */
     /* margin-right: 32px; */

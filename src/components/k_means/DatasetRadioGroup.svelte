@@ -62,7 +62,6 @@
     gap: 16px;
   }
 
-  /* TODO: Put horizontal scroll shadows */
   :global(.radio-group) {
     display: flex;
     gap: 16px;
