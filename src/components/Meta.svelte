@@ -6,6 +6,7 @@
   export let keywords =
     "k-means, clustering, machine learning, explorable, explain";
   export let socialImg = "";
+  // export let preloadFont = []
 </script>
 
 <svelte:head>
@@ -22,9 +23,9 @@
   <meta property="og:locale" content="en_US" />
 
   <meta property="og:image" content={socialImg} />
-  <meta property="og:image:type" content="image/jpeg" />
+  <!-- <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="600" />
+  <meta property="og:image:height" content="600" /> -->
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="https://pudding.cool" />
@@ -37,7 +38,7 @@
 
   <link rel="canonical" href="{url}/" />
 
-  {#each preloadFont as href}
+  <!-- {#each preloadFont as href}
     <link rel="preload" {href} as="font" type="font/woff2" crossorigin />
-  {/each}
+  {/each} -->
 </svelte:head>
