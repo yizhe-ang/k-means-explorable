@@ -1,26 +1,27 @@
 <script>
   // TODO: Change metadata
   export let title = "K-Means Explorable";
-  export let description = "K-Means Clustering: An Explorable Explainer";
-  export let url = "https://pudding.cool";
-  export let keywords = "";
-  export let preloadFont = [];
+  export let description = "An Explorable Explainable of K-Means Clustering";
+  export let url = "https://k-means-explorable.vercel.app/";
+  export let keywords =
+    "k-means, clustering, machine learning, explorable, explain";
+  export let socialImg = "";
 </script>
 
 <svelte:head>
   <title>{title}</title>
   <meta name="description" content={description} />
-  <meta name="author" content="The Pudding" />
+  <meta name="author" content="Yi Zhe Ang" />
   <meta name="news_keywords" content={keywords} />
 
   <meta property="og:title" content={title} />
-  <meta property="og:site_name" content="The Pudding" />
+  <meta property="og:site_name" content="Yi Zhe Ang" />
   <meta property="og:url" content={url} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="en_US" />
 
-  <meta property="og:image" content="{url}/assets/social-facebook.jpg" />
+  <meta property="og:image" content={socialImg} />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="600" />

@@ -11,7 +11,10 @@
   <MaxWidthWrapper maxWidth={"75ch"}>
     <div class="content-wrapper">
       <p class="acknowledgements">
-        Special thanks to ... for their invaluable feedback on this article.
+        Special thanks to <Link href="https://jetnew.io/">Jet New</Link> and <Link
+          href="https://www.linkedin.com/in/chan-guan-hao/">Chan Guan Hao</Link
+        > for their awesome feedback
+        on this article.
       </p>
       <div class="source-wrapper">
         <p>The <b>source code</b> for this article can be found here:</p>
@@ -24,7 +27,7 @@
       <div class="socials-wrapper">
         <p>
           Do you have any questions or suggestions? I'm happy to connect! Feel
-          free to reach out to me on:
+          free to <b>reach out to me</b> on:
         </p>
         <div class="icons-wrapper">
           <IconLink href="https://yizhe-ang.github.io/">
