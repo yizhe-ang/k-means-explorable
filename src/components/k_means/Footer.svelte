@@ -13,8 +13,7 @@
       <p class="acknowledgements">
         Special thanks to <Link href="https://jetnew.io/">Jet New</Link> and <Link
           href="https://www.linkedin.com/in/chan-guan-hao/">Guan Hao Chan</Link
-        > for their awesome feedback
-        on this article.
+        > for their awesome feedback on this article.
       </p>
       <div class="source-wrapper">
         <p>The <b>source code</b> for this article can be found here:</p>
@@ -33,6 +32,10 @@
           <IconLink href="https://yizhe-ang.github.io/">
             <Icon slot="icon" name="home" width={iconSize} height={iconSize} />
             <svelte:fragment slot="label">Portfolio site</svelte:fragment>
+          </IconLink>
+          <IconLink href="mailto:ang.yizhe@u.nus.edu">
+            <Icon slot="icon" name="mail" width={iconSize} height={iconSize} />
+            <svelte:fragment slot="label">Email</svelte:fragment>
           </IconLink>
           <IconLink href="https://twitter.com/yizhe_ang">
             <Icon
