@@ -53,3 +53,5 @@ export const stepView = writable(false);
 
 // Flag for rerunning k-means
 export const toggleKMeans = writable(true);
+
+export const toggleRerun = writable(true);

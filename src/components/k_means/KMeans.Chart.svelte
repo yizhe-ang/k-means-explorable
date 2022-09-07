@@ -1,8 +1,8 @@
 <script>
-  import { clusterColors, stepView } from "$stores/misc";
+  import { clusterColors, stepView, toggleRerun } from "$stores/misc";
   import { LayerCake, Svg, Html } from "layercake";
   import { fade } from "svelte/transition";
-  import { getContext } from "svelte";
+  import { onMount, getContext } from "svelte";
   import Line from "$lib/components/k_means/Line.svelte";
   import Scatter from "$lib/components/k_means/Scatter.svelte";
   import CircleSpringed from "$lib/components/k_means/Circle.Springed.svelte";
@@ -13,12 +13,15 @@
   import Histogram from "$lib/components/k_means/Histogram.svelte";
   import ToCentroidsLines from "$lib/components/k_means/ToCentroidsLines.svelte";
   import InteractionIndicator from "$lib/components/k_means/InteractionIndicator.svelte";
+  import { gsap } from "$utils/gsap.js";
 
   const { data, assignmentsHistory } = getContext("KMeans");
   const { scrollyIndex } = getContext("Scrolly");
 
   export let x;
   export let y;
+
+  let mounted = false;
 
   let hoveredPoint = { i: 6, d: $data[6] };
 
@@ -45,6 +48,22 @@
   };
   const inset = 0.02;
   const domain = [0 - inset, 1 + inset];
+
+  let svgWrapper;
+  let blinkAnimation;
+  onMount(() => {
+    blinkAnimation = gsap
+      .timeline()
+      .to(svgWrapper, { opacity: 0, duration: 0.05 })
+      .to(svgWrapper, { opacity: 1, duration: 0.4 });
+
+    mounted = true;
+  });
+
+  $: if (mounted) toggleBlink($toggleRerun);
+  function toggleBlink(toggle) {
+    blinkAnimation.restart();
+  }
 </script>
 
 <figure>
@@ -56,84 +75,88 @@
       {/if}
     </Html>
 
-    <Svg>
-      <!-- Marginal distributions -->
-      {#if $scrollyIndex >= 22}
-        <Histogram
-          bind:data={$data}
-          type={"x"}
-          {inset}
-          show={$scrollyIndex >= 22}
-          pointerEvents={$stepView ? "none" : "auto"}
-        />
-        <Histogram
-          bind:data={$data}
-          type={"y"}
-          {inset}
-          show={$scrollyIndex >= 22}
-          pointerEvents={$stepView ? "none" : "auto"}
-        />
-      {/if}
-
-      <!-- Decoration -->
-      {#if $scrollyIndex >= 2 && $scrollyIndex <= 3}
-        <ArrowAxis />
-      {/if}
-
-      <!-- For clicking (adding a point) interactions -->
-      {#if !$stepView && $scrollyIndex >= 23}
-        <ClickListenerRect />
-      {/if}
-
-      <!-- Lines to demo dist to centroids -->
-      {#if $scrollyIndex === 9}
-        <ToCentroidsLines {hoveredPoint} />
-      {/if}
-
-      <!-- Voronoi and related shapes -->
-      {#if $scrollyIndex >= 2}
-        <KMeansVoronoi />
-      {/if}
-
-      <!-- Data points -->
-      {#if $scrollyIndex >= 2}
-        <!-- <KMeansScatter /> -->
-        {#each $data as d, i (d)}
-          <CircleSpringed
-            {d}
-            fill={$scrollyIndex === 9
-              ? clusterColors[clusterAssignments[i]]
-              : "var(--color-gray-400)"}
-            stroke="var(--color-gray-400)"
-            pointerEvents={$scrollyIndex >= 23 && !$stepView ? "auto" : "none"}
+    <div bind:this={svgWrapper} class="svg-wrapper">
+      <Svg>
+        <!-- Marginal distributions -->
+        {#if $scrollyIndex >= 22}
+          <Histogram
+            bind:data={$data}
+            type={"x"}
+            {inset}
+            show={$scrollyIndex >= 22}
+            pointerEvents={$stepView ? "none" : "auto"}
           />
-        {/each}
-      {/if}
+          <Histogram
+            bind:data={$data}
+            type={"y"}
+            {inset}
+            show={$scrollyIndex >= 22}
+            pointerEvents={$stepView ? "none" : "auto"}
+          />
+        {/if}
 
-      <!-- For hover (show dist to centroids) interactions -->
-      {#if $scrollyIndex === 9}
-        <HoverListenerRect bind:hoveredPoint />
-      {/if}
+        <!-- Decoration -->
+        {#if $scrollyIndex >= 2 && $scrollyIndex <= 3}
+          <ArrowAxis />
+        {/if}
 
-      <!-- Distance metric demo -->
-      {#if $scrollyIndex === 7}
-        {#each sampleLines as d}
-          <Line data={d} stroke={"hsl(0, 0%, 0%)"} strokeWidth={3} />
-        {/each}
+        <!-- For clicking (adding a point) interactions -->
+        {#if !$stepView && $scrollyIndex >= 23}
+          <ClickListenerRect />
+        {/if}
 
-        <Scatter
-          data={sampleData}
-          fillAccessor={(d) => d.fill}
-          r={7}
-          stroke={"hsl(0, 0%, 0%)"}
-          strokeWidth={1}
-          strokeOpacity={0.3}
-        />
-      {/if}
+        <!-- Lines to demo dist to centroids -->
+        {#if $scrollyIndex === 9}
+          <ToCentroidsLines {hoveredPoint} />
+        {/if}
 
-      <!-- Interaction indicator -->
-      <InteractionIndicator />
-    </Svg>
+        <!-- Voronoi and related shapes -->
+        {#if $scrollyIndex >= 2}
+          <KMeansVoronoi />
+        {/if}
+
+        <!-- Data points -->
+        {#if $scrollyIndex >= 2}
+          <!-- <KMeansScatter /> -->
+          {#each $data as d, i (d)}
+            <CircleSpringed
+              {d}
+              fill={$scrollyIndex === 9
+                ? clusterColors[clusterAssignments[i]]
+                : "var(--color-gray-400)"}
+              stroke="var(--color-gray-400)"
+              pointerEvents={$scrollyIndex >= 23 && !$stepView
+                ? "auto"
+                : "none"}
+            />
+          {/each}
+        {/if}
+
+        <!-- For hover (show dist to centroids) interactions -->
+        {#if $scrollyIndex === 9}
+          <HoverListenerRect bind:hoveredPoint />
+        {/if}
+
+        <!-- Distance metric demo -->
+        {#if $scrollyIndex === 7}
+          {#each sampleLines as d}
+            <Line data={d} stroke={"hsl(0, 0%, 0%)"} strokeWidth={3} />
+          {/each}
+
+          <Scatter
+            data={sampleData}
+            fillAccessor={(d) => d.fill}
+            r={7}
+            stroke={"hsl(0, 0%, 0%)"}
+            strokeWidth={1}
+            strokeOpacity={0.3}
+          />
+        {/if}
+
+        <!-- Interaction indicator -->
+        <InteractionIndicator />
+      </Svg>
+    </div>
   </LayerCake>
 </figure>
 

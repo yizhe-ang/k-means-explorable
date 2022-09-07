@@ -2,7 +2,7 @@
   import PlaygroundTabs from "$components/k_means/Playground.Tabs.svelte";
   import IconButton from "$components/k_means/IconButton.svelte";
   import InputNumber from "$components/k_means/InputNumber.svelte";
-  import { algoStep, toggleKMeans, numClusters } from "$stores/misc";
+  import { algoStep, toggleKMeans, toggleRerun, numClusters } from "$stores/misc";
   import { getContext } from "svelte";
   import { fly } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
@@ -19,6 +19,7 @@
       name={"refresh-cw"}
       onClick={() => {
         $toggleKMeans = !$toggleKMeans;
+        $toggleRerun = !$toggleRerun;
         // HACK: To trigger reactivity
         $algoStep = -2;
         $algoStep = firstStep;
