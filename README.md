@@ -2,6 +2,7 @@
 
 **Check out the article live [here](https://k-means-explorable.vercel.app/).**
 
+Happy to share that this work has been awarded Best Submission at [VISxAI 2022](https://visxai.io/)! Do check out the other amazing submissions!
 
 https://user-images.githubusercontent.com/17507891/180015035-44596c95-6de1-4c4b-aa77-7f4bc09f25bc.mp4
 
