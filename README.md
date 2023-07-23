@@ -1,5 +1,7 @@
 # K-Means Clustering: An Explorable Explainer
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U7U4NH69A)  
+
 **Check out the article live [here](https://k-means-explorable.vercel.app/).**
 
 Happy to share that this work has been awarded Best Submission at [VISxAI 2022](https://visxai.io/)! Do check out the other amazing submissions!
