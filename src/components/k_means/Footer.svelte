@@ -40,10 +40,19 @@
           free to <b>reach out to me</b> on:
         </p>
         <div class="icons-wrapper">
-          <IconLink href="https://yizhe-ang.github.io/">
+          <div class="home-icon">
+            <a
+              href="https://yizhe-ang.github.io/"
+              aria-label="Yi Zhe Ang's Portfolio"
+              target="_blank"
+            >
+              <img style:height={"36px"} style:transform="translate(0, -5px)" src="/home-icon.png" />
+            </a>
+          </div>
+          <!-- <IconLink href="https://yizhe-ang.github.io/">
             <Icon slot="icon" name="home" width={iconSize} height={iconSize} />
             <svelte:fragment slot="label">Portfolio site</svelte:fragment>
-          </IconLink>
+          </IconLink> -->
           <IconLink href="mailto:ang.yizhe@u.nus.edu">
             <Icon slot="icon" name="mail" width={iconSize} height={iconSize} />
             <svelte:fragment slot="label">Email</svelte:fragment>
