@@ -20,7 +20,7 @@ const config = {
   kit: {
     adapter: adapter(),
     // Prerender everything except pages that are explicitly marked as not prerenderable
-    prerender: { default: true },
+    // prerender: { default: true },
     files: { lib: "./src" },
     trailingSlash: "always"
   },
