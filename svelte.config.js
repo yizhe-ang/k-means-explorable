@@ -41,10 +41,7 @@ const config = {
           $utils: path.resolve("./src/utils")
         }
       },
-      plugins: [dsv(), svg()],
-      ssr: {
-        noExternal: ["vite"]
-      }
+      plugins: [dsv(), svg()]
     },
     paths: {
       base
