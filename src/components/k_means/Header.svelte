@@ -1,50 +1,53 @@
 <script>
-  import Link from "$components/k_means/Link.svelte";
 </script>
 
-<div class="wrapper">
-  <h1>K-Means<br />Clustering</h1>
-  <h4>An Explorable Explainer</h4>
-  <p>By <Link href="https://yizhe-ang.github.io/">Yi Zhe Ang</Link></p>
-</div>
-
-<Link />
+<header>
+  <div class="home-icon">
+    <a
+      href="https://yizhe-ang.github.io/"
+      aria-label="Yi Zhe Ang's Portfolio"
+      target="_blank"
+    >
+      <img src="/home-icon.png" />
+    </a>
+  </div>
+  <div class="kofi-button">
+    <a class="kofi-link" href="https://ko-fi.com/U7U4NH69A" target="_blank"
+      ><img
+        height="48"
+        style="border:0px;height:48px;"
+        src="https://storage.ko-fi.com/cdn/kofi5.png?v=3"
+        border="0"
+        alt="Buy Me a Coffee at ko-fi.com"
+      /></a
+    >
+  </div>
+</header>
 
 <style>
-  h1 {
-    pointer-events: auto;
+  header {
+    /* position: fixed;
+    top: 0; */
+    position: relative;
+    width: 100%;
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0;
+    gap: 32px;
   }
 
-  h4 {
-    text-align: left;
-    margin-top: 10px;
-
-    text-shadow: var(--text-shadow);
-
-    pointer-events: auto;
+  .home-icon {
+    /* filter: grayscale(50%); */
   }
 
-  @media (max-width: 50rem) {
-    h1 {
-      font-size: 3.5rem;
-    }
-
-    h4 {
-      font-size: 2rem;
-    }
+  .kofi-button {
+    /* filter: grayscale(50%); */
   }
 
-  p {
-    font-size: 1.3rem;
-    font-weight: 250;
-    text-align: left;
-
-    /* text-shadow: var(--text-shadow); */
-
-    pointer-events: auto;
-  }
-
-  p a {
-    color: var(--color-fg);
+  .home-icon:hover {
+    /* filter: grayscale(0%); */
   }
 </style>

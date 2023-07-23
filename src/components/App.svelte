@@ -4,7 +4,8 @@
   import Conclusion from "$lib/components/k_means/Conclusion.svelte";
   import Footer from "$lib/components/k_means/Footer.svelte";
   import scrollY from "$stores/scrollY.js";
-  import Header from "$components/k_means/Header.svelte";
+  import Title from "$lib/components/k_means/Title.svelte";
+  import Header from "$lib/components/k_means/Header.svelte";
   import Notification from "$components/k_means/Notification.svelte";
   import Loading from "$components/k_means/Loading.svelte";
   import mq from "$stores/mq.js";
@@ -17,9 +18,12 @@
   });
 </script>
 
+
 {#if $scrollY === 0 && $mq["50rem"]}
   <Hero />
 {/if}
+
+<Header />
 
 {#if $mq["50rem"]}
   <section id="scrolly">
@@ -29,7 +33,7 @@
   <Conclusion />
 {:else}
   <div class="header-wrapper">
-    <Header />
+    <Title />
   </div>
   <Notification />
 {/if}
@@ -41,6 +45,10 @@
 {/if}
 
 <style>
+  #scrolly {
+    /* transform: translate(0, -96px); */
+  }
+
   .header-wrapper {
     display: grid;
     place-content: center;

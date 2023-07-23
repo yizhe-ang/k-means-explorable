@@ -1,6 +1,6 @@
 <script>
   import copy from "$data/copy.json";
-  import Header from "$components/k_means/Header.svelte";
+  import Title from "$lib/components/k_means/Title.svelte";
   import ScrollyStepWrapper from "$components/layouts/Scrolly.StepWrapper.svelte";
   import ScrollyStep from "$components/layouts/Scrolly.Step.svelte";
   import ScrollyStepContent from "$components/layouts/Scrolly.StepContent.svelte";
@@ -34,7 +34,7 @@
 >
   <div class="foreground-wrapper">
     <ScrollyStepWrapper height={"100vh"}>
-      <Header />
+      <Title />
     </ScrollyStepWrapper>
 
     {#each copy.steps as step, i}
@@ -80,6 +80,7 @@
     height: 100%;
     flex: 1 1 40%;
     z-index: 10;
+    transform: translate(0, -96px);
   }
 
   /* @media screen and (max-width: 768px) {

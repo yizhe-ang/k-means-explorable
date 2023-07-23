@@ -10,6 +10,17 @@
 <div class="wrapper">
   <MaxWidthWrapper maxWidth={"75ch"}>
     <div class="content-wrapper">
+      <div class="kofi-button">
+        <a class="kofi-link" href="https://ko-fi.com/U7U4NH69A" target="_blank"
+          ><img
+            height="48"
+            style="border:0px;height:48px;"
+            src="https://storage.ko-fi.com/cdn/kofi5.png?v=3"
+            border="0"
+            alt="Buy Me a Coffee at ko-fi.com"
+          /></a
+        >
+      </div>
       <p class="acknowledgements">
         Special thanks to <Link href="https://jetnew.io/">Jet New</Link> and <Link
           href="https://www.linkedin.com/in/chan-guan-hao/">Guan Hao Chan</Link
@@ -74,7 +85,7 @@
 <style>
   .wrapper {
     padding-bottom: 96px;
-    padding-top: 64px;
+    padding-top: 48px;
     background-color: hsl(262, 48%, 96%);
   }
 

@@ -1,10 +1,8 @@
 <script>
-  import Header from "$components/k_means/Header.svelte";
   import { Circle3 } from "svelte-loading-spinners";
 </script>
 
 <div class="wrapper">
-  <!-- <Header /> -->
   <Circle3
     ballTopLeft={"hsl(180, 50%, 82%)"}
     ballTopRight={"hsl(51, 90%, 71%)"}
