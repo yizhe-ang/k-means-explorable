@@ -23,7 +23,7 @@
   <Hero />
 {/if}
 
-<Header />
+<!-- <Header /> -->
 
 {#if $mq["50rem"]}
   <section id="scrolly">
