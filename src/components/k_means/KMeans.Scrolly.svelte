@@ -80,7 +80,7 @@
     height: 100%;
     flex: 1 1 40%;
     z-index: 10;
-    transform: translate(0, -96px);
+    /* transform: translate(0, -96px); */
   }
 
   /* @media screen and (max-width: 768px) {
